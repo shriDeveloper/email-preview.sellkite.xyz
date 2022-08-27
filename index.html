@@ -466,7 +466,19 @@
             console.log(store_url) // outputs 'yay'
             console.log("this one is always awesome !");
             //now do the remaining stuff here please.
-            
+          
+            fetch(`http://localhost:8000/api/v1/email/settings/${store_url}`)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+              if(data.status == 'success'){
+                 this.company_logo = data.data.company_logo;
+                
+              }
+              
+            });
+
+          
         }
         })
       </script>
