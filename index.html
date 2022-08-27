@@ -473,7 +473,9 @@
                 console.log(data)
               if(data.status == 'success'){
                  this.company_logo = data.data.company_logo;
-                
+                 this.company_brand = data.data.company_brand;
+                 this.message_header = data.data.message_header;
+                this.message_body = data.data.message_body;
               }
               
             });
