@@ -467,7 +467,7 @@
             console.log("this one is always awesome !");
             //now do the remaining stuff here please.
           
-            fetch(`https://shri.loca.lt/api/v1/email/settings/%{store_url}`)
+            fetch(`https://shri.loca.lt/api/v1/email/settings/${store_url}`)
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
