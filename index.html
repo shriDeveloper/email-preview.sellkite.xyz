@@ -88,6 +88,15 @@
 <body style="background-color:#eaeaea;margin:20px;">
     <!-- starting of vue app -->
     <div id="vue-app">
+      
+      
+	    <div class="container" v-if="isLoaderOn">
+		    <div class="row text-center">
+		    	<div class="col-md-12">
+		    		<img src="roller-loading-transparent.gif">
+		    	</div>
+		    </div>
+	    </div>
 
   <div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">  </div>
   <div style="background-color:#eaeaea;">
@@ -424,6 +433,7 @@
         delimiters: ["{{", "}}"],
         el: '#vue-app',
         data: {
+            isLoaderOn:true,
             company_brand_url:"",
             company_logo:"",
             company_brand:"",
@@ -475,6 +485,7 @@
             .then((data) => {
                 console.log("Data",data)
                 if(data.status){
+                    this.isLoaderOn = false;
                     const preview_products = data.products;
                     preview_products.forEach((product) => {
                         shopify_store_products.push({
