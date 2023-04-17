@@ -387,7 +387,7 @@
                 <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation">
                   <tbody>
                     <tr>
-                       <a :href="download_url" target="_blank" style="font-family:'Noto Sans', sans-serif;text-decoration:none;font-size:30px;display:block;padding:8px;border-radius:20px;color:white;background-color: black;">{{download_text}}</a> 
+                       <a :href="download_url" target="_blank" style=`font-family:'Noto Sans', sans-serif;text-decoration:none;font-size:30px;display:block;padding:8px;border-radius:20px;color:white;background-color: ${{download_button_background_color}};`>{{download_text}}</a> 
                     </tr>
                   </tbody>
                 </table>
@@ -433,6 +433,7 @@
         delimiters: ["{{", "}}"],
         el: '#vue-app',
         data: {
+	    download_button_background_color:''
             isLoaderOn:true,
             company_brand_url:"",
             company_logo:"",
@@ -517,6 +518,7 @@
                 this.email_footer = data.data.email_settings.email_footer;
                 this.download_text = data.data.email_settings.download_text;
                 this.email_header_color = data.data.page_settings.header_background_color;
+		this.download_button_background_color = data.data.button_background_color
               }
               
             });
