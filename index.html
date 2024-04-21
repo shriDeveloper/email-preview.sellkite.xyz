@@ -1,533 +1,446 @@
 <!DOCTYPE html>
-<head>
-  <title> Email - Your Downloads Are Ready </title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style type="text/css">
-    #outlook a {
-      padding: 0;
-    }
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
+   <head>
+      <title>Email Preview Template</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style type="text/css">
+         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap');
+      </style>
+      <!--<![endif]-->
+      <style>
+         * {
+         box-sizing: border-box;
+         }
+         body {
+         margin: 0;
+         padding: 0;
+         }
+         a[x-apple-data-detectors] {
+         color: inherit !important;
+         text-decoration: inherit !important;
+         }
+         #MessageViewBody a {
+         color: inherit;
+         text-decoration: none;
+         }
+         p {
+         line-height: inherit
+         }
+         .desktop_hide,
+         .desktop_hide table {
+         mso-hide: all;
+         display: none;
+         max-height: 0px;
+         overflow: hidden;
+         }
+         .image_block img+div {
+         display: none;
+         }
+         @media (max-width:700px) {
+         .desktop_hide table.icons-inner {
+         display: inline-block !important;
+         }
+         .icons-inner {
+         text-align: center;
+         }
+         .icons-inner td {
+         margin: 0 auto;
+         }
+         .image_block div.fullWidth {
+         max-width: 100% !important;
+         }
+         .mobile_hide {
+         display: none;
+         }
+         .row-content {
+         width: 100% !important;
+         }
+         .stack .column {
+         width: 100%;
+         display: block;
+         }
+         .mobile_hide {
+         min-height: 0;
+         max-height: 0;
+         max-width: 0;
+         overflow: hidden;
+         font-size: 0px;
+         }
+         .desktop_hide,
+         .desktop_hide table {
+         display: table !important;
+         max-height: none !important;
+         }
+         .row-1 .column-1 .block-5.paragraph_block td.pad>div {
+         font-size: 12px !important;
+         }
+         .row-1 .column-1 .block-4.paragraph_block td.pad>div {
+         font-size: 18px !important;
+         }
+         .row-1 .column-1 .block-6.button_block a,
+         .row-1 .column-1 .block-6.button_block div,
+         .row-1 .column-1 .block-6.button_block span {
+         font-size: 12px !important;
+         line-height: 24px !important;
+         }
+         .row-3 .column-1 .block-1.paragraph_block td.pad>div {
+         font-size: 14px !important;
+         }
+         .row-3 .column-2 .block-1.paragraph_block td.pad>div {
+         font-size: 22px !important;
+         }
+         }
+      </style>
+       <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+   </head>
+   <body style="margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
+      <div id="vue-app">
 
-    body {
-      margin: 0;
-      padding: 0;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-    }
-
-    table,
-    td {
-      border-collapse: collapse;
-      mso-table-lspace: 0pt;
-      mso-table-rspace: 0pt;
-    }
-
-    .companyLogo {
-      border: 0;
-      height: auto;
-      line-height: 100%;
-      outline: none;
-      text-decoration: none;
-      -ms-interpolation-mode: bicubic;
-    }
-
-    p {
-      display: block;
-      margin: 13px 0;
-    }
-  </style>
+         <!-- loader -->
+         <div class="container" v-if="isLoaderOn">
+            <div class="row text-center">
+               <div class="col-md-12" style="display: flex;justify-content: center;">
+                  <img src="roller-loading-transparent.gif">
+               </div>
+            </div>
+         </div>
+         <!-- ends here -->
   
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap" rel="stylesheet">
-    
-<style type="text/css">
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap');
-
-</style>
-  <!--<![endif]-->
-  <style type="text/css">
-    @media only screen and (min-width:480px) {
-      .mj-column-per-100 {
-        width: 100% !important;
-        max-width: 100%;
-      }
-
-      .mj-column-per-50 {
-        width: 50% !important;
-        max-width: 50%;
-      }
-
-      .mj-column-per-25 {
-        width: 25% !important;
-        max-width: 25%;
-      }
-    }
-  </style>
-  <style type="text/css">
-    @media only screen and (max-width:480px) {
-      table.mj-full-width-mobile {
-        width: 100% !important;
-      }
-
-      td.mj-full-width-mobile {
-        width: auto !important;
-      }
-    }
-  </style>
-  <style type="text/css">
-    a,
-    span,
-    td,
-    th {
-      -webkit-font-smoothing: antialiased !important;
-      -moz-osx-font-smoothing: grayscale !important;
-    }
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-</head>
-
-<body style="background-color:#eaeaea;margin:20px;">
-    <!-- starting of vue app -->
-    <div id="vue-app">
-      
-      
-	    <div class="container" v-if="isLoaderOn">
-		    <div class="row text-center">
-		    	<div class="col-md-12" style="display: flex;justify-content: center;">
-		    		<img src="roller-loading-transparent.gif">
-		    	</div>
-		    </div>
-	    </div>
-
-  <div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">  </div>
-  <div style="background-color:#eaeaea;">
-
-    <div style="margin:0px auto;max-width:600px;">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
-        <tbody>
-          
-          <tr>
-            <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
-              
-              <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-                  <tbody>
-                    
-                    <tr>
-                    <td style="font-size:0px;word-break:break-word;">
-                
-                      <div style="height:20px;"></div>
-               
-                    </td>
-                  </tr>
-                </tbody></table>
-              </div>
-
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div style="margin:0px auto;border-radius:20px 20px 0 0;max-width:600px;">
-      <div style="line-height:0;font-size:0;">
-        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" :style="{'width': '100%', 'border-radius': '20px 20px 0 0', 'background-color': email_header_color}">
-          <tbody>
+      <table v-if="!isLoaderOn" class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff;">
+         <tbody>
             <tr>
-              <td style="direction:ltr;font-size:0px;padding:40px 0;text-align:center;">
-                
-                <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                  <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-                    <tbody><tr>
-                      <td align="center" style="font-size:0px;padding:8px 0;word-break:break-word;">
-                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
-                          <tbody>
-                            <tr>
-                              <td style="width:150px;">
-                                <a :href="company_brand_url" target="_blank"><img class="companyLogo" height="auto" :src="company_logo" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:16px;" width="150" /></a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="font-size:0px;word-break:break-word;">
-                       
-                        <div style="height:20px;"> </div>
-                       
-                      </td>
-                    </tr>
-                  </tbody></table>
-                </div>
-
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    
-    <div style="background:#ffffff;background-color:#ffffff;margin:0px auto;max-width:600px;">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;">
-        <tbody>
-          <tr>
-            <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
-            
-              <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-                  <tbody>
-                    <tr>
-                      <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;color:black">
-                        <div style="font-family:'Noto Sans', sans-serif;font-size:16px;font-weight:400;line-height:20px;text-align:left;color:#54595f;">
-                          <h1 style="margin: 0; font-size: 24px; line-height: 32px; line-height: normal; font-weight: bold;"> {{company_brand}}</h1>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                    <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                      <div style="font-family:'Noto Sans', sans-serif;font-size:16px;font-weight:400;line-height:20px;text-align:left;color:#54595f;">
-                        <h1 style="margin: 0; font-size: 24px; line-height: 32px; line-height: normal; font-weight: bold;"> {{message_header}}</h1>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                      <div style="font-family:'Noto Sans', sans-serif;font-size:16px;font-weight:400;line-height:20px;text-align:left;color:#54595f;" v-html="message_body">
-<!--                         <p style="margin: 0 0 5px 0;">{{message_body}} </p> -->
-                      </div>
-                    </td>
-                  </tr>
-                </tbody></table>
-              </div>
-
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div style="background:#f9f9f9;background-color:#f9f9f9;margin:0px auto;max-width:600px;">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#f9f9f9;background-color:#f9f9f9;width:100%;">
-        <tbody>
-          <tr>
-            <td style="direction:ltr;font-size:0px;padding:10px 25px;text-align:center;">
-
-              <div style="margin:0px auto;max-width:550px;">
-                <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
-                  <tbody>
-                    <tr>
-                      <td style="direction:ltr;font-size:0px;padding:5px 0;text-align:center;">
-                      
-                        <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0;line-height:0;text-align:left;display:inline-block;width:100%;direction:ltr;">
-                          
-                          <div class="mj-column-per-50 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:50%;">
-                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-                              <tbody><tr>
-                                <td align="left" style="font-size:0px;padding:5px 0 0 0;word-break:break-word;">
-                                  <div style="font-family:'Noto Sans', sans-serif;font-size:14px;font-weight:400;line-height:20px;text-align:left;color:#54595f;">
-                                    <p style="margin: 0 0 5px 0;">{{email_date}}</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody></table>
-                          </div>
-                          
-                          <div class="mj-column-per-50 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:50%;">
-                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-                              <tbody><tr>
-                                <td align="right" style="font-size:0px;padding:5px 0 0 0;word-break:break-word;">
-                                  <div style="font-family:'Noto Sans', sans-serif;font-size:14px;font-weight:700;line-height:18px;text-align:right;color:#999999;">
-                                    <p style="margin: 0 0 5px 0;">Order No: {{order_no}}</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody></table>
-                          </div>
-                    
-                        </div>
-                        
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              
-              <div style="margin:0px auto;max-width:550px;">
-                <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
-                  <tbody>
-                    <tr>
-                      <td style="border-bottom:1px solid #ddd;border-top:1px solid #ddd;direction:ltr;font-size:0px;padding:5px 0;text-align:center;">
-                        <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0;line-height:0;text-align:left;display:inline-block;width:100%;direction:ltr;">
-                          <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-                              <tbody><tr>
-                                <td align="left" style="font-size:0px;padding:5px 0 0 0;word-break:break-word;">
-                                  <div style="font-family:'Noto Sans', sans-serif;font-size:14px;font-weight:bold;letter-spacing:1px;line-height:20px;text-align:left;text-transform:uppercase;color:#54595f;">
-                                    <p style="margin: 0 0 5px 0;">Items Ordered</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody></table>
-                          </div>
-                   
-                        </div>
-                   
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-
-              <div v-for="product,index in products" :key="index" style="margin:0px auto;max-width:550px;">
-                <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
-                  <tbody>
-                    <tr>
-                      <td style="border-bottom:1px solid #ddd;direction:ltr;font-size:0px;padding:10px 0 5px 0;text-align:center;">
-                     
-                        <div class="mj-column-per-25 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                          <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-                            <tbody><tr>
-                              <td align="center" style="font-size:0px;padding:0 5px 5px 0;word-break:break-word;">
-                                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;" class="mj-full-width-mobile">
-                                  <tbody>
+               <td>
+                  <table class="row row-1" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" :style="`mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: ${email_header_color} ;`">
+                     <tbody>
+                        <tr>
+                           <td>
+                              <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 680px; margin: 0 auto;" width="680">
+                                 <tbody>
                                     <tr>
-                                      <td style="width:132px;" class="mj-full-width-mobile">
-                                        <img height="auto" :src="product.product_image" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:16px;" width="132" />
-                                      </td>
+                                       <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                          <div class="spacer_block block-1" style="height:45px;line-height:45px;font-size:1px;">&#8202;</div>
+                                          <table class="image_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                             <tr>
+                                                <td class="pad" style="width:100%;padding-right:0px;padding-left:0px;">
+                                                   <div class="alignment" align="center" style="line-height:10px">
+                                                      <div style="max-width: 204px;"><a :href="company_brand_url" target="_blank" style="outline:none" tabindex="-1"><img :src=company_logo style="display: block; height: auto; border: 0; width: 100%;text-decoration: none;" width="204" alt="Logo" title="Logo" height="auto"></a></div>
+                                                   </div>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                          <div class="spacer_block block-3" style="height:20px;line-height:20px;font-size:1px;">&#8202;</div>
+                                          <table class="paragraph_block block-4" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                                             <tr>
+                                                <td class="pad" style="padding-bottom:15px;padding-left:10px;padding-right:10px;padding-top:10px;">
+                                                   <div :style="`color:${header_font_color};font-family:Noto Sans, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:30px;line-height:120%;text-align:center;mso-line-height-alt:36px;`">
+                                                      <p style="margin: 0; word-break: break-word;"><strong><span>{{message_header}}
+                                                         </span></strong>
+                                                      </p>
+                                                   </div>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                          <table class="paragraph_block block-5" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                                             <tr>
+                                                <td class="pad" style="padding:15px;">
+                                                   <div :style="`color:${header_font_color};font-family:Noto Sans, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:15px;line-height:180%;text-align:left;mso-line-height-alt:27px;`">
+                                                      {{message_body}}
+                                                   </div>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                          <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                                             <tr>
+                                                <td  style="padding:5px;">
+                                                   <div :style="`color:${header_font_color};font-family:Noto Sans, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:15px;text-align:left;`">
+                                                      <h3>Order #{{order_no}}</h3>
+                                                   </div>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
                                     </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                          </tbody></table>
-                        </div>
-                    
-                        <div class="mj-column-per-50 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                          <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-                            <tbody><tr>
-                              <td align="left" style="font-size:0px;padding:0;word-break:break-word;">
-                                <div style="font-family:'Noto Sans', sans-serif;font-size:16px;font-weight:400;line-height:20px;text-align:left;color:#54595f;">
-                                  <p style="margin: 0 0 5px 0;">{{product.product_title}}</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td align="left" style="font-size:0px;padding:0;word-break:break-word;">
-                                <div style="font-family:'Noto Sans', sans-serif;font-size:14px;font-weight:400;line-height:18px;text-align:left;color:#999999;">
-                                  <p style="margin: 0 0 5px 0;"><strong>SKU:</strong> {{product.product_sku}}</p>
-                                </div>
-                              </td>
-                            </tr>
-                            
-                          </tbody></table>
-                        </div>
-                      
-                        <div class="mj-column-per-25 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:bottom;width:100%;">
-                          <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:bottom;" width="100%">
-                            <tbody><tr>
-                              <td align="right" style="font-size:0px;padding:0;word-break:break-word;">
-                                <div style="font-family:'Noto Sans', sans-serif;font-size:16px;font-weight:400;line-height:20px;text-align:right;color:#54595f;">
-                                  <p style="margin: 0 0 5px 0;">{{product.product_price}}</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody></table>
-                        </div>
-                        
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              
-              
-             
-              <div style="margin:0px auto;max-width:550px;">
-                <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
-                  <tbody>
-                    <tr>
-                      <td style="border-top:1px solid #ddd;direction:ltr;font-size:0px;padding:5px 0;text-align:center;">
-                       
-                        <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0;line-height:0;text-align:left;display:inline-block;width:100%;direction:ltr;">
-                        
-                          <div class="mj-column-per-50 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:50%;">
-                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-                              <tbody><tr>
-                                <td align="left" style="font-size:0px;padding:5px 0 0 0;word-break:break-word;">
-                                  <div style="font-family:'Noto Sans', sans-serif;font-size:18px;font-weight:bold;line-height:24px;text-align:left;color:#54595f;">
-                                    <p style="margin: 0 0 5px 0;">Total</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody></table>
-                          </div>
-                         
-                          <div class="mj-column-per-50 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:50%;">
-                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-                              <tbody><tr>
-                                <td align="right" style="font-size:0px;padding:5px 0 0;word-break:break-word;">
-                                  <div style="font-family:'Noto Sans', sans-serif;font-size:18px;font-weight:bold;line-height:24px;text-align:right;color:#54595f;">
-                                    <p style="margin: 0 0 5px 0;">{{order_amount}}</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody></table>
-                          </div>
-                          
-                        </div>
-                        
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-             <div style="margin:30px auto;max-width:550px;">
-                <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation">
-                  <tbody>
-                    <tr>
-                       <a :href="download_url" target="_blank" :style="{ 'font-family': 'Noto Sans, sans-serif', 'text-decoration': 'none', 'font-size': '30px', 'display': 'block', 'padding': '8px', 'border-radius': '20px', 'color': 'white', 'background-color': download_button_background_color }">{{download_text}}</a>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              
-              
-            </td>
-          </tr>
-        </tbody>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table class="row row-2" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                     <tbody>
+                        <tr>
+                           <td>
+                              <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 680px; margin: 0 auto;" width="680">
+                                 <tbody>
+                                    <tr>
+                                       <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                          <table class="empty_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                             <tr>
+                                                <td class="pad">
+                                                   <div></div>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                 
+                  <table class="row row-6" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                     <tbody>
+                        <tr>
+                           <td>
+                              <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; color: #000000; width: 680px; margin: 0 auto;" width="680">
+                                 <tbody>
+									
+                                    <!-- each product row -->
+                                    <tr v-for="product,index in products" :key="index">
+                                       <td class="column column-1" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 10px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                          <table class="image_block block-1" width="100%" border="0" cellpadding="20" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                             <tr>
+                                                <td class="pad">
+                                                   <div class="alignment" align="center" style="line-height:10px">
+                                                      <div  style="max-width: 100px;"><a href="#" target="_blank" style="outline:none" tabindex="-1"><img :src="product.product_image" style="display: block; height: 100px; border: 0; width: 100px;border-radius: 10px;"  :alt="product.product_title" :title="product.product_title" height="auto"></a></div>
+                                                   </div>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                       <td class="column column-2" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                          <div class="spacer_block block-1" style="height:25px;line-height:25px;font-size:1px;">&#8202;</div>
+                                          <table class="paragraph_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                                             <tr>
+                                                <td class="pad" style="padding-bottom:10px;padding-left:30px;padding-right:10px;padding-top:10px;">
+                                                   <div style="color:#232323;font-family:Noto Sans, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:17px;line-height:50%;text-align:left;mso-line-height-alt:20.4px;">
+                                                      <p style="margin: 0; word-break: break-word;"><span>{{product.product_title}}</span></p>
+                                                   </div>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+									
+                                    <!-- ends here -->
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table class="row row-9" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                     <tbody>
+                        <tr>
+                           <td>
+                              <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; color: #000000; width: 680px; margin: 0 auto;" width="680">
+                                 <tbody>
+                                    <tr>
+                                       <td class="column column-1" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 10px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                          <div class="spacer_block block-1 mobile_hide" style="height:25px;line-height:25px;font-size:1px;">&#8202;</div>
+                                       </td>
+                                       <td class="column column-2" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                          <table class="empty_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                             <tr>
+                                                <td class="pad">
+                                                   <div></div>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                       <td class="column column-3" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                          <div class="spacer_block block-1 mobile_hide" style="height:25px;line-height:25px;font-size:1px;">&#8202;</div>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table class="row row-10" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                     <tbody>
+                        <tr>
+                           <td>
+                              <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 680px; margin: 0 auto;" width="680">
+                                 <tbody>
+                                    <tr>
+                                       <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                          <table class="button_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                             <tr>
+                                                <td class="pad" style="padding-bottom:10px;padding-left:30px;padding-right:30px;padding-top:10px;text-align:center;">
+                                                   <div class="alignment" align="center">
+														            <a :href="download_url" target="_blank" :style="`color:${button_font_color};background-color: ${download_button_background_color};text-decoration:none;display:inline-block;border-radius:4px;width:auto;border-top:0px solid #8a3b8f;font-weight:undefined;padding-top:5px;padding-bottom:5px;font-family:Noto Sans, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:21px;text-align:center;mso-border-alt:none;word-break:keep-all;`"><span style="padding-left:20px;padding-right:20px;font-size:21px;display:inline-block;letter-spacing:normal;"><span style="word-break: break-word; line-height: 42px;">{{ download_text }}</span></span></a>
+                                                   </div>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                          <div class="spacer_block block-2" style="height:20px;line-height:20px;font-size:1px;">&#8202;</div>
+                                          <div class="spacer_block block-3" style="height:20px;line-height:20px;font-size:1px;">&#8202;</div>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <!-- if the plan is on free - show the footer -->
+                  <table  class="row row-11" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F5F5F5;padding:20px;">
+                     <tbody>
+                        <tr>
+                           <td>
+                              <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 680px; margin: 0 auto;" width="680">
+                                 <tbody>
+                                    <tr>
+                                       <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                          <table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                                             <tr>
+                                                <td class="pad" style="padding-bottom:10px;padding-left:30px;padding-right:10px;padding-top:10px;">
+                                                   <div style="color:#333;font-family:Noto Sans, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;line-height:120%;text-align:left;mso-line-height-alt:21.599999999999998px;">
+                                                      <p style="margin: 0; word-break: break-word;"><strong><span>Powered By</span></strong></p>
+                                                   </div>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                          <table class="paragraph_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                                             <tr>
+                                                <td class="pad" style="padding-bottom:10px;padding-left:30px;padding-right:10px;padding-top:10px;">
+                                                   <div style="color:#333;font-family:Noto Sans, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:12px;line-height:150%;text-align:left;mso-line-height-alt:18px;">
+                                                      <p style="margin: 0; word-break: break-word;"><a href="https://apps.shopify.com/sellkit-digital-products?ref=email" target="_blank" style="text-decoration: underline; color: #333;" rel="noopener">Sellkite - Digital Downloads</a></p>
+                                                   </div>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                          <table class="paragraph_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                                             <tr>
+                                                <td class="pad" style="padding-bottom:10px;padding-left:30px;padding-right:10px;padding-top:10px;">
+                                                   <div style="color:#333;font-family:Noto Sans, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:12px;line-height:120%;text-align:left;mso-line-height-alt:14.399999999999999px;">
+                                                      <p style="margin: 0; word-break: break-word;"><span>Want to start earning with your digital products ? <a href="mailto:needhelpfromsellkite@gmail.com?subject=I need help with my new shopify store" target="_blank" style="text-decoration: underline; color: #333;" rel="noopener">Contact Us</a></span></p>
+                                                   </div>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
       </table>
-    </div>
-    
-    <div style="background:#ffffff;background-color:#ffffff;margin:0px auto;border-radius:0 0 20px 20px;max-width:600px;">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;border-radius:0 0 20px 20px;">
-        <tbody>
-          <tr>
-            <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
-              
-              <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-                  <tbody><tr>
-                    <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                      <div style="font-family:'Noto Sans', sans-serif;font-size:16px;font-weight:400;line-height:20px;text-align:left;color:#54595f;">{{email_footer}}</div>
-                    </td>
-                  </tr>
-                </tbody></table>
-              </div>
-              
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+   </div>
 
-    
-  </div>
 
-    </div>
-
-    
-    <script>
-        var app = new Vue({
-        delimiters: ["{{", "}}"],
-        el: '#vue-app',
-        data: {
-	    download_button_background_color:'',
-            isLoaderOn:true,
-            company_brand_url:"",
-            company_logo:"",
-            company_brand:"",
-            message_header:"",
-            message_body:"",
-            download_url:"#",
-            email_header_color:"",
-            download_text:"",
-            email_footer:"",
-            order_amount:"$455",
-            order_no:"1233",
-            email_date:"11 Aug 2022",
-            products:[
-                {
-                product_image:"https://images.unsplash.com/photo-1657299143471-231353519c63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-                product_title:"Product A",
-                product_sku:"sku-a",
-                product_price:"$234",
-                },
-                {
-                product_image:"https://media.istockphoto.com/id/1224574565/photo/romantic-breakfast-together-in-open-air-in-village.webp?s=612x612&w=is&k=20&c=X7oLrwzqZbBjTmTg3WzJNL5tXkTWuOq4sSzDvhOPR7E=",
-                product_title:"Product B",
-                product_sku:"sku-b",
-                product_price:"$334",
-                },
-                {
-                product_image:"https://media.istockphoto.com/id/1368602623/photo/three-people-on-picnic-among-scattered-plastic-waste.webp?s=612x612&w=is&k=20&c=UKnA2eJZplulv-zLHgxlGAub31zGYEUwGBxjqIcaY34=",
-                product_title:"Product C",
-                product_sku:"sku-c",
-                product_price:"$434",
-                }
-            ]
-
-        },
-        mounted(){
-          const params = new Proxy(new URLSearchParams(window.location.search), {
-            get: (searchParams, prop) => searchParams.get(prop),
-          });
-            //now let's load the data here
-            const store_url = params.store; 
-            console.log(store_url) // outputs 'yay'
-            console.log("this one is always awesome !");
-            //now do the remaining stuff here please.
-
-            const shopify_store_products = []
-            //also do the products preview over here (so everybody knows how to ket them)
-            fetch(`https://app.sellkite.xyz/api/v1/email/preview/products?store_url=${store_url}`)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log("Data",data)
-                if(data.status){
-                    this.isLoaderOn = false;
-                    const preview_products = data.products;
-                    preview_products.forEach((product) => {
-                        shopify_store_products.push({
-                            product_image:product.image && product.image.src ? product.image.src : "https://www.aaronfaber.com/wp-content/uploads/2017/03/product-placeholder-wp.jpg",
-                            product_title:product.title,
-                            product_sku:product.variants && product.variants.length > 0  ? product.variants[0].sku : "sample-sku",
-                            product_price:product.variants && product.variants.length > 0  ? `$${product.variants[0].price}` : "$100",
-                        })
-                    })
-                    //now finally complete if there's necessity to overwrite shopify_store_products & this.products
-                    if(shopify_store_products.length > 0){
-                        this.products = []
-                        this.products = this.products.concat(shopify_store_products);
-                    }
-                }
-            })
-            
-            //ends here
-
-            fetch(`https://app.sellkite.xyz/api/v1/preview/?store=${store_url}`)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data)
-              if(data.status == 'success'){
-                 this.company_logo = data.data.email_settings.company_logo;
-                 this.company_brand = data.data.email_settings.company_brand;
-                 this.message_header = data.data.email_settings.message_header;
-                this.message_body = data.data.email_settings.message_body;
-                this.email_footer = data.data.email_settings.email_footer;
-                this.download_text = data.data.email_settings.download_text;
-                this.email_header_color = data.data.page_settings.header_background_color;
-		this.download_button_background_color = data.data.page_settings.button_background_color;
+   <script>
+      var app = new Vue({
+      delimiters: ["{{", "}}"],
+      el: '#vue-app',
+      data: {
+     download_button_background_color:'',
+     button_font_color:'',
+          isLoaderOn:true,
+          company_brand_url:"",
+          company_logo:"",
+          company_brand:"",
+          message_header:"",
+          message_body:"",
+          download_url:"#",
+          email_header_color:"",
+          header_font_color:'white',
+          download_text:"",
+          email_footer:"",
+          order_amount:"$455",
+          order_no:"1233",
+          email_date:"11 Aug 2022",
+          products:[
+              {
+              product_image:"https://images.unsplash.com/photo-1657299143471-231353519c63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+              product_title:"Product A",
+              product_sku:"sku-a",
+              product_price:"$234",
+              },
+              {
+              product_image:"https://media.istockphoto.com/id/1224574565/photo/romantic-breakfast-together-in-open-air-in-village.webp?s=612x612&w=is&k=20&c=X7oLrwzqZbBjTmTg3WzJNL5tXkTWuOq4sSzDvhOPR7E=",
+              product_title:"Product B",
+              product_sku:"sku-b",
+              product_price:"$334",
+              },
+              {
+              product_image:"https://media.istockphoto.com/id/1368602623/photo/three-people-on-picnic-among-scattered-plastic-waste.webp?s=612x612&w=is&k=20&c=UKnA2eJZplulv-zLHgxlGAub31zGYEUwGBxjqIcaY34=",
+              product_title:"Product C",
+              product_sku:"sku-c",
+              product_price:"$434",
               }
-              
-            });
+          ]
 
+      },
+      mounted(){
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+          get: (searchParams, prop) => searchParams.get(prop),
+        });
+          //now let's load the data here
+          const store_url = params.store; 
+          console.log(store_url) // outputs 'yay'
+          console.log("this one is always awesome !");
+          //now do the remaining stuff here please.
+
+          const shopify_store_products = []
+          //also do the products preview over here (so everybody knows how to ket them)
+          fetch(`https://app.sellkite.xyz/api/v1/email/preview/products?store_url=${store_url}`)
+          .then((response) => response.json())
+          .then((data) => {
+              console.log("Data",data)
+              if(data.status){
+                  this.isLoaderOn = false;
+                  const preview_products = data.products;
+                  preview_products.forEach((product) => {
+                      shopify_store_products.push({
+                          product_image:product.image && product.image.src ? product.image.src : "https://www.aaronfaber.com/wp-content/uploads/2017/03/product-placeholder-wp.jpg",
+                          product_title:product.title,
+                          product_sku:product.variants && product.variants.length > 0  ? product.variants[0].sku : "sample-sku",
+                          product_price:product.variants && product.variants.length > 0  ? `$${product.variants[0].price}` : "$100",
+                      })
+                  })
+                  //now finally complete if there's necessity to overwrite shopify_store_products & this.products
+                  if(shopify_store_products.length > 0){
+                      this.products = []
+                      this.products = this.products.concat(shopify_store_products);
+                  }
+              }
+          })
           
-        }
-        })
-      </script>
-    
+          //ends here
 
+          fetch(`https://app.sellkite.xyz/api/v1/preview/?store=${store_url}`)
+          .then((response) => response.json())
+          .then((data) => {
+              console.log(data)
+            if(data.status == 'success'){
+               this.company_logo = data.data.email_settings.company_logo;
+               this.company_brand = data.data.email_settings.company_brand;
+               this.message_header = data.data.email_settings.message_header;
+              this.message_body = data.data.email_settings.message_body;
+              this.email_footer = data.data.email_settings.email_footer;
+              this.download_text = data.data.email_settings.download_text;
+              this.email_header_color = data.data.page_settings.header_background_color;
+              this.download_button_background_color = data.data.page_settings.button_background_color;
+              this.button_font_color = data.data.page_settings.button_font_color;
+            }
+            
+          });
 
-</body></html>
+        
+      }
+      })
+    </script>
+
+   </body>
+</html>
