@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
    <head>
-      <title>Email Preview Template</title>
+      <title></title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <style type="text/css">
@@ -152,7 +152,7 @@
                                           </table>
                                           <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
                                              <tr>
-                                                <td  style="padding:5px;">
+                                                <td  style="padding:10px;">
                                                    <div :style="`color:${header_font_color};font-family:Noto Sans, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:15px;text-align:left;`">
                                                       <h3>Order #{{order_no}}</h3>
                                                    </div>
@@ -199,8 +199,8 @@
                                  <tbody>
 									
                                     <!-- each product row -->
-                                    <tr v-for="product,index in products" :key="index">
-                                       <td class="column column-1" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 10px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                    <tr  v-for="product,index in products" :key="index">
+                                       <td class="column column-1" width="25%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: center; padding-bottom: 5px; padding-left: 10px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
                                           <table class="image_block block-1" width="100%" border="0" cellpadding="20" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                              <tr>
                                                 <td class="pad">
@@ -216,13 +216,14 @@
                                           <table class="paragraph_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                                              <tr>
                                                 <td class="pad" style="padding-bottom:10px;padding-left:30px;padding-right:10px;padding-top:10px;">
-                                                   <div style="color:#232323;font-family:Noto Sans, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:17px;line-height:50%;text-align:left;mso-line-height-alt:20.4px;">
+                                                   <div style="color:#232323;font-family:Noto Sans, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:17px;line-height:50%;text-align:center;mso-line-height-alt:20.4px;">
                                                       <p style="margin: 0; word-break: break-word;"><span>{{product.product_title}}</span></p>
                                                    </div>
                                                 </td>
                                              </tr>
                                           </table>
                                        </td>
+                                       
                                     </tr>
 									
                                     <!-- ends here -->
