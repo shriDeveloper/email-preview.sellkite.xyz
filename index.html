@@ -340,26 +340,6 @@
           order_amount:"$455",
           order_no:"1233",
           email_date:"11 Aug 2022",
-          products:[
-              {
-              product_image:"https://images.unsplash.com/photo-1657299143471-231353519c63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-              product_title:"Product A",
-              product_sku:"sku-a",
-              product_price:"$234",
-              },
-              {
-              product_image:"https://media.istockphoto.com/id/1224574565/photo/romantic-breakfast-together-in-open-air-in-village.webp?s=612x612&w=is&k=20&c=X7oLrwzqZbBjTmTg3WzJNL5tXkTWuOq4sSzDvhOPR7E=",
-              product_title:"Product B",
-              product_sku:"sku-b",
-              product_price:"$334",
-              },
-              {
-              product_image:"https://media.istockphoto.com/id/1368602623/photo/three-people-on-picnic-among-scattered-plastic-waste.webp?s=612x612&w=is&k=20&c=UKnA2eJZplulv-zLHgxlGAub31zGYEUwGBxjqIcaY34=",
-              product_title:"Product C",
-              product_sku:"sku-c",
-              product_price:"$434",
-              }
-          ]
 
       },
       mounted(){
@@ -368,37 +348,6 @@
         });
           //now let's load the data here
           const store_url = params.store; 
-          console.log(store_url) // outputs 'yay'
-          console.log("this one is always awesome !");
-          //now do the remaining stuff here please.
-
-          const shopify_store_products = []
-          //also do the products preview over here (so everybody knows how to ket them)
-          fetch(`https://app.sellkite.xyz/api/v1/email/preview/products?store_url=${store_url}`)
-          .then((response) => response.json())
-          .then((data) => {
-              console.log("Data",data)
-              if(data.status){
-                  this.isLoaderOn = false;
-                  const preview_products = data.products;
-                  preview_products.forEach((product) => {
-                      shopify_store_products.push({
-                          product_image:product.image && product.image.src ? product.image.src : "https://www.aaronfaber.com/wp-content/uploads/2017/03/product-placeholder-wp.jpg",
-                          product_title:product.title,
-                          product_sku:product.variants && product.variants.length > 0  ? product.variants[0].sku : "sample-sku",
-                          product_price:product.variants && product.variants.length > 0  ? `$${product.variants[0].price}` : "$100",
-                      })
-                  })
-                  //now finally complete if there's necessity to overwrite shopify_store_products & this.products
-                  if(shopify_store_products.length > 0){
-                      this.products = []
-                      this.products = this.products.concat(shopify_store_products);
-                  }
-              }
-          })
-          
-          //ends here
-
           fetch(`https://app.sellkite.xyz/api/v1/preview/?store=${store_url}`)
           .then((response) => response.json())
           .then((data) => {
